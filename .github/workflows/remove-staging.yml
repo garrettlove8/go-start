@@ -1,4 +1,4 @@
-name: Deploy Serverless
+name: Remove Staging
 
 # on:
 #   push:
@@ -16,7 +16,7 @@ on:
         description: 'Remove staging' 
 
 jobs:
-  deploy:
+  remove-staging:
     name: Remove Staging
     runs-on: ubuntu-latest
     steps:
