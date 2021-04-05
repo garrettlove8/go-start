@@ -31,7 +31,6 @@ jobs:
         env GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o bin/relationshipsCRUD ./cmd/relationshipsCRUD
 
     - name: Serverless Deploy
-      run: serverless
       uses: serverless/github-action@master
       with:
         args: deploy
