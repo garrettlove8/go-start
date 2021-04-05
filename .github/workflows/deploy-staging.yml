@@ -13,9 +13,6 @@ jobs:
   deploy:
     name: Deploy to Staging
     runs-on: ubuntu-latest
-    # strategy:
-    #   matrix:
-    #     node-version: [14.x]
     steps:
     - uses: actions/checkout@v2
     
