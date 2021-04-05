@@ -1,9 +1,13 @@
 name: Deploy Staging
 
+# on:
+#   push:
+#     branches:
+#       - develop
+
 on:
   push:
-    branches:
-      - develop
+    branches: [ feature/* ]
 
 jobs:
   deploy:
