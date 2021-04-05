@@ -1,9 +1,13 @@
 name: Deploy Serverless
 
+# on:
+#   push:
+#     branches:
+#       - develop
+
 on:
   push:
-    branches:
-      - develop
+    branches: [ feature/* ]
 
 jobs:
   deploy:
