@@ -1,14 +1,5 @@
 name: Remove Staging
 
-# on:
-#   push:
-#     branches:
-#       - develop
-
-# on:
-#   push:
-#     branches: [ feature/* ]
-
 on:
   workflow_dispatch:
     inputs:
