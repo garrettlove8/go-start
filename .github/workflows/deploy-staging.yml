@@ -30,7 +30,7 @@ jobs:
     - name: Serverless Deploy
       uses: serverless/github-action@master
       with:
-        args: deploy
+        args: deploy --stage staging
       env:
         AWS_ACCESS_KEY_ID: AKIA5MCERQDGM2CPBRPB
         AWS_SECRET_ACCESS_KEY: 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
