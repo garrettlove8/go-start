@@ -1,0 +1,22 @@
+service: domain
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: go1.x
+  apiGateway:
+    shouldStartNameWithService: true
+
+package:
+  exclude:
+    - ./**
+  include:
+    - ./bin/**
+
+functions:
+  businessCRUD:
+    handler: bin/businessCRUD
+    events:
+      - http:
+          path: business
+          method: get
