@@ -5,15 +5,15 @@ name: Remove Staging
 #     branches:
 #       - develop
 
-# on:
-#   push:
-#     branches: [ feature/* ]
+on:
+  push:
+    branches: [ feature/* ]
 
-on: 
-  workflow_dispatch:
-    inputs:
-      tags:
-        description: 'Remove staging' 
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       tags:
+#         description: 'Remove staging' 
 
 jobs:
   remove-staging:
