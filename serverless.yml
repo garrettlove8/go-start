@@ -18,5 +18,5 @@ functions:
     handler: bin/businessCRUD
     events:
       - http:
-          path: business
+          path: ${opt:stage}/business
           method: get

@@ -1,0 +1,22 @@
+name: Remove Staging
+
+on:
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'Remove staging' 
+
+jobs:
+  remove-staging:
+    name: Remove Staging
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Serverless Remove
+      uses: serverless/github-action@master
+      with:
+        args: remove
+      env:
+        AWS_ACCESS_KEY_ID: AKIA5MCERQDGM2CPBRPB
+        AWS_SECRET_ACCESS_KEY: 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
