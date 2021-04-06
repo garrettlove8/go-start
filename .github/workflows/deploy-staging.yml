@@ -1,0 +1,36 @@
+name: Deploy Staging
+
+# on:
+#   push:
+#     branches:
+#       - develop
+
+on:
+  push:
+    branches: [ feature/* ]
+
+jobs:
+  deploy:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.16
+    
+    - name: Build
+      run: |
+        export GO111MODULE=on
+        env GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o bin/businessCRUD ./cmd/businessCRUD
+        env GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o bin/relationshipsCRUD ./cmd/relationshipsCRUD
+
+    - name: Serverless Deploy
+      uses: serverless/github-action@master
+      with:
+        args: deploy --stage staging
+      env:
+        AWS_ACCESS_KEY_ID: AKIA5MCERQDGM2CPBRPB
+        AWS_SECRET_ACCESS_KEY: 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
